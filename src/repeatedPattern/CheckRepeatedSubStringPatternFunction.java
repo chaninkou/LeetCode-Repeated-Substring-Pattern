@@ -9,19 +9,32 @@ public class CheckRepeatedSubStringPatternFunction {
     // }
     
     public boolean repeatedSubstringPattern(String s){
-        int l = s.length();
+        int totalLength = s.length();
         
-        for(int i=l/2;i>=1;i--) {
-            if(l%i==0) {
-                int m = l/i;
-                String subS = s.substring(0,i);
-                StringBuilder sb = new StringBuilder();
-                for(int j=0;j<m;j++) {
-                    sb.append(subS);
-                }
-                if(sb.toString().equals(s)) return true;
-            }
-	}
-	return false;
+        for(int i = totalLength / 2; i >= 1; i--){
+        	// Only check if they are even
+        	if(totalLength % i == 0){
+        		// Number of time it repeat
+        		int repeat = totalLength / i;
+        		
+        		// Get current substring to check
+        		String currentWord = s.substring(0, i);
+        		
+        		// To store string
+        		StringBuilder sb = new StringBuilder();
+        		
+        		// Store the currentword to the sb with the number of repeat
+        		for(int j = 0; j < repeat; j++){
+        			sb.append(currentWord);
+        		}
+        		
+        		// After storing, check if sb contain the original string
+        		if(sb.toString().equals(s)){
+        			return true;
+        		}
+        	}
+        }
+        // If it gets here, that means there is no pattern
+        return false;
     }
 }
