@@ -34,6 +34,7 @@ public class CheckRepeatedSubStringPatternFunction {
         		}
         	}
         }
+        
         // If it gets here, that means there is no pattern
         return false;
     }
