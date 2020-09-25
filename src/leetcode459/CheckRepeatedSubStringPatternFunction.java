@@ -1,4 +1,4 @@
-package repeatedPattern;
+package leetcode459;
 
 public class CheckRepeatedSubStringPatternFunction {
     // A cool solution
